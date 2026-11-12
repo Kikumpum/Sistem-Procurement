@@ -37,11 +37,11 @@ function SignIn() {
       setBusy(false);
     }
   }
-  return <main className="auth-shell"><section className="panel auth-card">
+  return <main className="auth-shell"><section className="auth-card" aria-labelledby="auth-title">
     <div className="brand-mark"><Icon name="layers" /></div>
-    <h1>Ruang Pengadaan</h1>
+    <h1 id="auth-title">Ruang Pengadaan</h1>
     {!client ? <p className="info">{configurationError || "Hubungkan proyek Supabase untuk membuka aplikasi. Ikuti langkah di README."}</p>
-      : <form onSubmit={signIn}>
+      : <form onSubmit={signIn} aria-busy={busy}>
         <p>Masuk dengan akun pengadaanmu.</p>
         <Field label="Email" type="email" name="email" autoComplete="username" />
         <Field label="Kata sandi" type="password" name="password" autoComplete="current-password" />

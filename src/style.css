@@ -117,11 +117,71 @@ dialog::backdrop { background: #17253485; }
 .error { color: #962e2e; font-size: 12px; margin: 8px 0; }
 .info { background: #edf3f9; border: 1px solid #dbe7f1; border-radius: 5px; padding: 9px 10px; color: #34536f; font-size: 13px; line-height: 1.5; }
 .sync-notice { margin-bottom: 13px; }
-.auth-shell { min-height: 100vh; display: grid; place-items: center; }
-.auth-card { width: min(100%, 380px); padding: 23px; }
-.auth-card h1 { font-size: 23px; margin: 9px 0 12px; }
-.auth-card form { display: grid; gap: 13px; }
-.auth-card form > p { color: var(--muted); }
+/* Architectural photo by Sean Pollock on Unsplash. */
+main.auth-shell {
+  max-width: none;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  justify-items: end;
+  padding: 44px clamp(48px, 10vw, 184px);
+  background-color: #183047;
+  background-image:
+    linear-gradient(105deg, rgb(12 29 45 / 16%), rgb(9 24 41 / 64%)),
+    url("./assets/office-towers.webp");
+  background-size: cover;
+  background-position: center 46%;
+}
+.auth-card {
+  width: min(100%, 420px);
+  padding: clamp(28px, 4vw, 40px);
+  border: 1px solid #e1e6ed;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 18px 60px rgb(8 21 36 / 30%);
+}
+.auth-card .brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 9px;
+  background: #163752;
+}
+.auth-card .brand-mark svg { width: 22px; height: 22px; }
+.auth-card h1 {
+  margin: 16px 0 9px;
+  color: #142a40;
+  font-size: clamp(25px, 4vw, 31px);
+  line-height: 1.16;
+  letter-spacing: -.035em;
+}
+.auth-card form { display: grid; gap: 16px; }
+.auth-card form > p:first-child {
+  margin-bottom: 4px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.auth-card label { font-size: 13px; }
+.auth-card .field {
+  min-height: 46px;
+  padding: 8px 11px;
+  margin-top: 6px;
+  border-radius: 6px;
+  font-size: 16px;
+}
+.auth-card .button {
+  min-height: 46px;
+  margin-top: 3px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+@media (max-width: 720px) {
+  main.auth-shell {
+    justify-items: center;
+    padding: 28px 18px;
+    background-position: 38% center;
+  }
+}
 @media (max-width: 850px) {
   .workspace { margin-left: 0; }
   .sidebar { display: none; }
