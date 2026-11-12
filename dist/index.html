@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pantau alur pembelian dari permintaan hingga penerimaan.">
+<title>Ruang Pengadaan</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="#ringkasan"><span class="brand-mark" data-icon="layers"></span><span>Ruang Pengadaan<small>PROCUREMENT WORKSPACE</small></span></a>
+  <div class="nav-caption">RUANG KERJA</div>
+  <nav aria-label="Menu utama">
+    <a href="#ringkasan" data-nav="ringkasan"><span data-icon="dashboard"></span>Ringkasan</a>
+    <a href="#permintaan" data-nav="permintaan"><span data-icon="file"></span>Permintaan Pembelian<span class="nav-count" id="pending"></span></a>
+    <a href="#vendor" data-nav="vendor"><span data-icon="users"></span>Vendor</a>
+    <a href="#pesanan" data-nav="pesanan"><span data-icon="cart"></span>Purchase Order</a>
+    <a href="#penerimaan" data-nav="penerimaan"><span data-icon="box"></span>Penerimaan</a>
+  </nav>
+  <div class="side-bottom"><div class="local-note"><span data-icon="database"></span><div><strong>Penyimpanan lokal</strong><small>Data tersimpan di browser ini</small></div></div><div class="profile"><span class="avatar">P</span><div><strong>Procurement</strong><small>Ruang kerja pembelian</small></div></div></div>
+</aside>
+<div class="workspace">
+  <header class="topbar"><div class="crumb"><button type="button" class="icon-button mobile-menu" data-action="menu" aria-label="Buka menu" data-icon="menu"></button><span>Ruang kerja</span><span data-icon="chevron"></span><strong id="crumb">Ringkasan</strong></div><div class="today"><span data-icon="calendar"></span><span id="today"></span></div></header>
+  <main id="main"></main>
+</div>
+<dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

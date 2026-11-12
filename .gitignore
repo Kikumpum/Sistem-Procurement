@@ -1,0 +1,6 @@
+node_modules/
+build/
+.openai/
+.vercel/
+.env*
+!.env.example
